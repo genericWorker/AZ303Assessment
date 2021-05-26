@@ -1,0 +1,173 @@
+{
+    "name": "vmImageStorage-nsg",
+    "id": "/subscriptions/816dacf8-03b6-4189-a451-90236b48f615/resourceGroups/imageStorageRg/providers/Microsoft.Network/networkSecurityGroups/vmImageStorage-nsg",
+    "etag": "W/\"bfec796f-a822-4940-b74e-1f9eb763f76c\"",
+    "type": "Microsoft.Network/networkSecurityGroups",
+    "location": "eastus",
+    "properties": {
+        "provisioningState": "Succeeded",
+        "resourceGuid": "d38d3738-dfcc-4dde-aca8-123aebabab0c",
+        "securityRules": [
+            {
+                "name": "RDP",
+                "id": "/subscriptions/816dacf8-03b6-4189-a451-90236b48f615/resourceGroups/imageStorageRg/providers/Microsoft.Network/networkSecurityGroups/vmImageStorage-nsg/securityRules/RDP",
+                "etag": "W/\"bfec796f-a822-4940-b74e-1f9eb763f76c\"",
+                "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "protocol": "TCP",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "3389",
+                    "sourceAddressPrefix": "*",
+                    "destinationAddressPrefix": "*",
+                    "access": "Allow",
+                    "priority": 300,
+                    "direction": "Inbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            }
+        ],
+        "defaultSecurityRules": [
+            {
+                "name": "AllowVnetInBound",
+                "id": "/subscriptions/816dacf8-03b6-4189-a451-90236b48f615/resourceGroups/imageStorageRg/providers/Microsoft.Network/networkSecurityGroups/vmImageStorage-nsg/defaultSecurityRules/AllowVnetInBound",
+                "etag": "W/\"bfec796f-a822-4940-b74e-1f9eb763f76c\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Allow inbound traffic from all VMs in VNET",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "VirtualNetwork",
+                    "destinationAddressPrefix": "VirtualNetwork",
+                    "access": "Allow",
+                    "priority": 65000,
+                    "direction": "Inbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "AllowAzureLoadBalancerInBound",
+                "id": "/subscriptions/816dacf8-03b6-4189-a451-90236b48f615/resourceGroups/imageStorageRg/providers/Microsoft.Network/networkSecurityGroups/vmImageStorage-nsg/defaultSecurityRules/AllowAzureLoadBalancerInBound",
+                "etag": "W/\"bfec796f-a822-4940-b74e-1f9eb763f76c\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Allow inbound traffic from azure load balancer",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "AzureLoadBalancer",
+                    "destinationAddressPrefix": "*",
+                    "access": "Allow",
+                    "priority": 65001,
+                    "direction": "Inbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "DenyAllInBound",
+                "id": "/subscriptions/816dacf8-03b6-4189-a451-90236b48f615/resourceGroups/imageStorageRg/providers/Microsoft.Network/networkSecurityGroups/vmImageStorage-nsg/defaultSecurityRules/DenyAllInBound",
+                "etag": "W/\"bfec796f-a822-4940-b74e-1f9eb763f76c\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Deny all inbound traffic",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "*",
+                    "destinationAddressPrefix": "*",
+                    "access": "Deny",
+                    "priority": 65500,
+                    "direction": "Inbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "AllowVnetOutBound",
+                "id": "/subscriptions/816dacf8-03b6-4189-a451-90236b48f615/resourceGroups/imageStorageRg/providers/Microsoft.Network/networkSecurityGroups/vmImageStorage-nsg/defaultSecurityRules/AllowVnetOutBound",
+                "etag": "W/\"bfec796f-a822-4940-b74e-1f9eb763f76c\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Allow outbound traffic from all VMs to all VMs in VNET",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "VirtualNetwork",
+                    "destinationAddressPrefix": "VirtualNetwork",
+                    "access": "Allow",
+                    "priority": 65000,
+                    "direction": "Outbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "AllowInternetOutBound",
+                "id": "/subscriptions/816dacf8-03b6-4189-a451-90236b48f615/resourceGroups/imageStorageRg/providers/Microsoft.Network/networkSecurityGroups/vmImageStorage-nsg/defaultSecurityRules/AllowInternetOutBound",
+                "etag": "W/\"bfec796f-a822-4940-b74e-1f9eb763f76c\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Allow outbound traffic from all VMs to Internet",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "*",
+                    "destinationAddressPrefix": "Internet",
+                    "access": "Allow",
+                    "priority": 65001,
+                    "direction": "Outbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            },
+            {
+                "name": "DenyAllOutBound",
+                "id": "/subscriptions/816dacf8-03b6-4189-a451-90236b48f615/resourceGroups/imageStorageRg/providers/Microsoft.Network/networkSecurityGroups/vmImageStorage-nsg/defaultSecurityRules/DenyAllOutBound",
+                "etag": "W/\"bfec796f-a822-4940-b74e-1f9eb763f76c\"",
+                "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "description": "Deny all outbound traffic",
+                    "protocol": "*",
+                    "sourcePortRange": "*",
+                    "destinationPortRange": "*",
+                    "sourceAddressPrefix": "*",
+                    "destinationAddressPrefix": "*",
+                    "access": "Deny",
+                    "priority": 65500,
+                    "direction": "Outbound",
+                    "sourcePortRanges": [],
+                    "destinationPortRanges": [],
+                    "sourceAddressPrefixes": [],
+                    "destinationAddressPrefixes": []
+                }
+            }
+        ],
+        "networkInterfaces": [
+            {
+                "id": "/subscriptions/816dacf8-03b6-4189-a451-90236b48f615/resourceGroups/imageStorageRg/providers/Microsoft.Network/networkInterfaces/vmimagestorage988"
+            }
+        ]
+    }
+}
